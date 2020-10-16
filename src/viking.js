@@ -87,7 +87,30 @@ class War {
         }
         return result;
     }
+    showStatus() {
+        if (this.saxonArmy.length === 0) {
+            return 'Vikings have won the war of the century!';
+        } else if (this.vikingArmy.length === 0) {
+            return 'Saxons have fought for their lives and survived another day...';
+        } else if (this.saxonArmy.length >= 1 && this.vikingArmy.length >= 1) {
+            return 'Vikings and Saxons are still in the thick of battle.';
+        }
+    }
 }
+
+let newWar1 = new War (); 
+let newViking = new Viking('Andre', 100, 100);
+let newSaxon = new Saxon(100,100);
+
+newWar1.addViking(newViking);
+newWar1.addSaxon(newSaxon);
+
+newWar1.vikingAttack();
+
+console.log(newWar1.showStatus());
+
+
+
 
 
 
